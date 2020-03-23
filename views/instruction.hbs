@@ -1,0 +1,180 @@
+<head>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161203985-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161203985-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <title>coronaVirus-Data</title>
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function display_random_image() {
+            var theImages = [
+                {
+                    src:
+                        "images/w1.jpg",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w2.jpg",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w3.jpg",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w4.jpg",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w5.jpg",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w6.png",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w7.jpg",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w8.jpg",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w9.png",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w10.png",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                },
+                {
+                    src: "images/w11.png",
+                    width: "330",
+                    height: "310",
+                    class: "img-fluid"
+                }
+
+            ];
+
+            var preBuffer = [];
+            for (var i = 0, j = theImages.length; i < j; i++) {
+                preBuffer[i] = new Image();
+                preBuffer[i].src = theImages[i].src;
+                preBuffer[i].width = theImages[i].width;
+                preBuffer[i].height = theImages[i].height;
+            }
+
+            // create random image number
+            function getRandomInt(min, max) {
+                //  return Math.floor(Math.random() * (max - min + 1)) + min;
+
+                imn = Math.floor(Math.random() * (max - min + 1)) + min;
+                return preBuffer[imn];
+            }
+
+            // 0 is first image,   preBuffer.length - 1) is  last image
+
+            var newImage = getRandomInt(0, preBuffer.length - 1);
+
+            // remove the previous images
+            var images = document.getElementsByTagName("img");
+            var l = images.length;
+            for (var p = 0; p < l; p++) {
+                images[0].parentNode.removeChild(images[0]);
+            }
+            // display the image
+            document.body.appendChild(newImage);
+        }
+    </script>
+</head>
+
+<body>
+
+
+
+    <header>
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light" style="max-width:100%" ;>
+            <a class="navbar-brand" href="#">
+
+                REALTIME CORONA-VIRUS DATA
+            </a>
+        </nav>
+
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/instruction">instruction</a></li>
+                <li class="breadcrumb-item"><a href="/myth">Myth-Buster</a></li>
+                <li class="breadcrumb-item"><a href="/search">SearchByCountry</a></li>
+            </ol>
+        </nav>
+
+
+        <!-- <div class="container-fluid">
+
+            <h1 style="color: antiquewhite;">{{title}}</h1>
+            <img src="" style="width: 100px;" /> <img src="" style="width: 60px;" />
+        </div><br>-->
+    </header>
+
+    <div>
+        <center> <button id="jsstyle" class="btn btn-primary bt-lg" onclick="display_random_image();">Click here to get
+                Random<br> Instruction From <b>WHO</br></button></center>
+    </div><br><br>
+
+
+
+    <div class="footer">
+
+        <p>developer contact: <a href="https://arbazahmed.ml/">ArbazAhmed.ml</a></p>
+    </div>
+
+</body>
